@@ -29,7 +29,7 @@ def callback():
     session["email"] = gmail_auth._get_user_email(creds)
     gmail_service = GmailService(creds)
 
-    topic_name = f"projects/{os.getenv('PROJECT_ID')}/topics/gmail-mail-events"
+    topic_name = os.getenv("TOPIC_NAME")
     gmail_service.start_watch(topic_name)
     return jsonify({"message": "Authentication successful", "email": session["email"]})
 

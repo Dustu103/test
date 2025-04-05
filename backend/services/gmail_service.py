@@ -9,7 +9,7 @@ class GmailService:
     def start_watch(self, topic_name):
         request = {
             'labelIds': ['INBOX'],
-            'topicName': "projects/emailai-455810/topics/gmail-mail-events"
+            'topicName': topic_name
         }
         response = self.service.users().watch(userId='me', body=request).execute()
         print("🔔 Gmail Watch Registered:", response)
