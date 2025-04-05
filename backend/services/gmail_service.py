@@ -1,4 +1,6 @@
 from googleapiclient.discovery import build
+import base64
+
 
 class GmailService:
     def __init__(self, credentials):
